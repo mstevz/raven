@@ -1,0 +1,28 @@
+@mixin messageBubble {
+    display: inline-block;
+    position: relative;
+
+    max-width: 80%;
+
+    padding-left:20px;
+    padding-right:20px;
+
+    margin-bottom:10px;
+    border-radius: 20px;
+}
+
+@mixin messageBubbleTail{
+    position:absolute;
+    bottom:0;
+
+    width:10px;
+    height:16px;
+}
+
+@mixin messageBubbleTailAfter {
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+}
