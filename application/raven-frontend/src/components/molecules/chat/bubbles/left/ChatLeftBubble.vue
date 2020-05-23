@@ -1,5 +1,5 @@
 <template>
-    <div class="message-right-bubble">
+    <div class="message-left-bubble">
         <p>{{text}}</p>
         <span class="message-bubble-tail"></span>
     </div>
@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    name: 'chat-right-bubble',
+    name: 'chat-left-bubble',
     props: {
         text: String
     }
@@ -16,27 +16,26 @@ export default {
 
 <style lang="scss" scoped>
     @import '@/components/atoms/colors/chat/chat.scss';
-    @import '@/components/molecules/chatBubbles/mixins.scss';
+    @import '@/components/molecules/chat/bubbles/mixins.scss';
 
-    .message-right-bubble {
+    .message-left-bubble {
 
         @include messageBubble;
 
-        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
         background-color: $messageBubbleColor;
 
         .message-bubble-tail {
             @include messageBubbleTail;
 
-            right:0;
-            transform: translateX(100%);
+            left:0;
+            transform: translateX(-100%);
             background-color: $messageBubbleColor;
 
             &:after {
                 @include messageBubbleTailAfter;
 
-                right:0;
-                border-bottom-left-radius: 100%;
+                border-bottom-right-radius: 100%;
                 background-color: $chatBgColor;
             }
         }
@@ -44,6 +43,5 @@ export default {
         p {
             text-align: justify;
         }
-
     }
 </style>

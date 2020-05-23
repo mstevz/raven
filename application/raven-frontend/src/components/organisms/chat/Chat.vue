@@ -12,9 +12,9 @@
 </template>
 
 <script>
-import ChatLeftBubble  from '@/components/molecules/chatBubbles/leftBubble/ChatLeftBubble.vue';
-import ChatRightBubble from '@/components/molecules/chatBubbles/rightBubble/ChatRightBubble.vue';
-import ChatTextbox     from '@/components/molecules/chatTextbox/ChatTextbox.vue';
+import ChatLeftBubble  from '@/components/molecules/chat/bubbles/left/ChatLeftBubble.vue';
+import ChatRightBubble from '@/components/molecules/chat/bubbles/right/ChatRightBubble.vue';
+import ChatTextbox     from '@/components/molecules/chat/textbox/ChatTextbox.vue';
 
 export default {
     name: 'chat',
