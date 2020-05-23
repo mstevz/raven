@@ -1,7 +1,13 @@
 <template>
-    <div class="message-right-bubble">
-        <p>{{text}}</p>
-        <span class="message-bubble-tail"></span>
+    <div>
+        <div class="message-right-bubble">
+            <p>{{text}}</p>
+            <span class="message-bubble-tail"></span>
+        </div>
+
+        <figure>
+            <img src="@/assets/user.png" alt="user">
+        </figure>
     </div>
 </template>
 
@@ -18,34 +24,52 @@ export default {
     @import '@/components/atoms/colors/chat/chat.scss';
     @import '@/components/molecules/chat/bubbles/mixins.scss';
 
-    .message-right-bubble {
+    div {
 
-        @include messageBubble;
+        display:flex;
+        justify-content: flex-end;
 
-        float:right;
+        figure {
+            margin:0;
+            margin-left:15px;
 
-        border-bottom-right-radius: 0;
-        background-color: $messageBubbleColor;
+            align-self: flex-end;
 
-        .message-bubble-tail {
-            @include messageBubbleTail;
-
-            right:0;
-            transform: translateX(100%);
-            background-color: $messageBubbleColor;
-
-            &:after {
-                @include messageBubbleTailAfter;
-
-                right:0;
-                border-bottom-left-radius: 100%;
-                background-color: $chatBgColor;
+            img {
+                width:25px;
+                height: auto;
+                border-radius:100%;
             }
         }
 
-        p {
-            text-align: justify;
-        }
+        .message-right-bubble {
 
+            @include messageBubble;
+            // float:right;
+
+            border-bottom-right-radius: 0;
+            background-color: $messageBubbleColor;
+
+            .message-bubble-tail {
+                @include messageBubbleTail;
+
+                right:0;
+                transform: translateX(100%);
+                background-color: $messageBubbleColor;
+
+                &:after {
+                    @include messageBubbleTailAfter;
+
+                    right:0;
+                    border-bottom-left-radius: 100%;
+                    background-color: $chatBgColor;
+                }
+            }
+
+            p {
+                text-align: justify;
+            }
+
+        }
     }
 </style>

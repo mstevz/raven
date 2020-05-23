@@ -2,7 +2,7 @@
     <section class="chatbox">
         <div class="messages-container" >
             <div v-for="message in messages" v-bind:key="message.id">
-                <chat-left-bubble v-if="message.sender != 'me'" :text="`${message.value}`"/>
+                <chat-left-bubble  v-if="message.sender != 'me'" :username="`${message.username}`" :text="`${message.value}`"/>
                 <chat-right-bubble v-if="message.sender == 'me'" :text="`${message.value}`"/>
             </div>
         </div>
@@ -35,9 +35,9 @@ export default {
     data: function(){
         return {
             messages: [
-                {id: 1, sender:'notme', value:'hello'},
-                {id: 2, sender:'me', value:'hi!'},
-                {id: 2, sender:'me', value:'how are you doing?'}
+                {id: 1, username:'johndoe', sender:'notme', value:'hello'},
+                {id: 2, username:'janedoe', sender:'me', value:'hi!'},
+                {id: 3, username:'janedoe', sender:'me', value:'how are you doing?'}
             ]
         }
     }
@@ -70,17 +70,14 @@ export default {
 
             overflow-y: auto;
 
-            div {
+            /*div {
                 display:flex;
 
                 &:nth-child(1){
                     align-items: flex-end;
                 }
-            }
+            } */
 
-            /*
-
-            */
         }
 
         &:nth-child(2) {
