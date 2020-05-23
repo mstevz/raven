@@ -22,6 +22,8 @@ export default {
 
         @include messageBubble;
 
+        float:right;
+
         border-bottom-right-radius: 0;
         background-color: $messageBubbleColor;
 
