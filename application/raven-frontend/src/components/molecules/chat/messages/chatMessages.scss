@@ -1,0 +1,19 @@
+.messages-container {
+
+    height:90%;
+     /* needs vendor prefixes */
+    display:flex;
+
+    flex-direction: column;
+
+    padding-top:100px;
+    padding:10px;
+    padding-left:15px;
+    padding-right:15px;
+
+    overflow-y: auto;
+
+    div {
+        margin-bottom:5px;
+    }
+}

@@ -1,0 +1,51 @@
+@import '@/components/atoms/colors/chat/chat.scss';
+@import '@/components/molecules/chat/bubbles/mixins.scss';
+
+div {
+
+    display:flex;
+    justify-content: flex-end;
+
+    figure {
+        margin:0;
+        margin-left:15px;
+
+        align-self: flex-end;
+
+        img {
+            width:25px;
+            height: auto;
+            border-radius:100%;
+        }
+    }
+
+    .message-right-bubble {
+
+        @include messageBubble;
+        // float:right;
+
+        border-bottom-right-radius: 0;
+        background-color: $messageBubbleColor;
+
+        .message-bubble-tail {
+            @include messageBubbleTail;
+
+            right:0;
+            transform: translateX(100%);
+            background-color: $messageBubbleColor;
+
+            &:after {
+                @include messageBubbleTailAfter;
+
+                right:0;
+                border-bottom-left-radius: 100%;
+                background-color: $chatBgColor;
+            }
+        }
+
+        p {
+            text-align: justify;
+        }
+
+    }
+}
