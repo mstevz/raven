@@ -1,18 +1,10 @@
 <template>
     <div>
-
         <section v-if="isLoggedIn">
             Welcome to the mighty home!
         </section>
-        <section v-else>
-            <login />
-        </section>
-
-
-
+        <login v-else></login>
     </div>
-
-
 </template>
 
 <script>

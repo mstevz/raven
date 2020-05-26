@@ -1,75 +1,91 @@
 <template>
-    <section class="login-area">
-        <div>
-            <img src="@/assets/ravenlogo.svg" style="max-width:100px" alt="">
+    <section class="login-section">
+        <form id="loginForm" action="index.html" method="post">
 
-            <form id="loginForm" action="index.html" method="post">
+            <raven-logo />
 
+            <div>
                 <label for="">Username</label>
                 <input type="text" name="" value="" />
+            </div>
 
+            <div>
                 <label for="">Password</label>
                 <input type="password" name="" value="" />
+            </div>
 
-                <button type="button" name="button">Login</button>
+        </form>
 
-                <button type="button" name="button">Sign Up</button>
-            </form>
+        <div id="buttonArea">
+            <button type="button" name="button">Sign Up</button>
+            <button type="button" name="button">Login</button>
         </div>
     </section>
 </template>
 
 <script>
+import RavenLogo from '@/components/atoms/logos/raven/RavenLogo.vue';
+
 export default {
-    name: 'login'
+    name: 'login',
+    components: {
+        RavenLogo
+    }
 }
 </script>
 
 <style lang="scss" scoped>
-    .login-area {
+    .login-section{
         display:flex;
-        flex-direction:column;
+        flex-direction: column;
 
-        height:100vh;
-        width:100vw;
+        height: 100vh;
+        text-align: left;
 
-        background-color: #c1a57b;
+        #loginForm {
+            display:flex;
+            flex-direction:column;
 
-        align-items: center;
-        justify-content: center;
+            flex:1;
 
-        div {
             width:100%;
-            text-align: center;
 
+            align-items: center;
+            justify-content: center;
 
-            #loginForm {
-                display: flex;
+            div {
+                display:flex;
                 flex-direction: column;
 
-                text-align: left;
+                margin-top:10px;
 
-                padding:0px 20px;
-                padding-bottom:50px;
-                border-radius:10px;
+                width:80%;
 
-                input[type="text"],
-                input[type="password"],
-                button{
-                    padding:8px;
-                    margin-top:5px;
-                    margin-bottom:5px;
+                label {
+                    text-align: left;
                 }
 
-                button {
-                    background-color: #1a1a1a;
-                    color: #fff;
-                    border-style:none;
-                    cursor:pointer;
 
+                input[type="text"],
+                input[type="password"]{
+
+                    padding:8px;
                 }
             }
         }
 
+        #buttonArea {
+            display:flex;
+            flex-direction:row;
+
+            max-height:35px;
+
+            bottom:0;
+
+            button {
+                width: 100%;
+                height:35px;
+            }
+        }
     }
 </style>
